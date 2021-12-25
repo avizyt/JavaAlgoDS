@@ -4,8 +4,8 @@ package com.avijit.stack;
 public class DynamicArrayStack {
     public static void main(String[] args) throws Exception {
 
-        DynamicArrayStack dstack = new DynamicArrayStack();
         int num = 24;
+        DynamicArrayStack dstack = new DynamicArrayStack(num);
         for (int i = 10; i <= num; i++) {
             dstack.push(i);
         }
