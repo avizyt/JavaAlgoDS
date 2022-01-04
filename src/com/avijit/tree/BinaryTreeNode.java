@@ -15,7 +15,7 @@ public class BinaryTreeNode {
     public void setData(int data){
         this.data = data;
     }
-    public BinaryTreeNode getleft(){
+    public BinaryTreeNode getLeft(){
         return left;
     }
     public void setLeft(BinaryTreeNode left){
