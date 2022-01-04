@@ -1,6 +1,5 @@
 package com.avijit.queue;
 
-import com.avijit.stack.FixedSizeArrayStack;
 
 public class FixedSizeArrayQueue {
     public static void main(String[] args) {
@@ -44,7 +43,7 @@ public class FixedSizeArrayQueue {
         }
     }
 
-    // remove the front element fro the queue
+    // remove the front element from the queue
     public int deQueue() throws IllegalStateException{
         // Effect: if queue is empty throw IllegalState Exception,
         // else remove and return oldest element of this
