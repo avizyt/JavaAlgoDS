@@ -1,10 +1,10 @@
 package com.avijit.tree;
 
-public class BinaryTreeNode {
+public class Node {
     public int data;
-    public BinaryTreeNode left, right;
+    public Node left, right;
 
-    public BinaryTreeNode(int data){
+    public Node(int data){
         this.data = data;
         left = null;
         right = null;
@@ -15,16 +15,16 @@ public class BinaryTreeNode {
     public void setData(int data){
         this.data = data;
     }
-    public BinaryTreeNode getLeft(){
+    public Node getLeft(){
         return left;
     }
-    public void setLeft(BinaryTreeNode left){
+    public void setLeft(Node left){
         this.left = left;
     }
-    public BinaryTreeNode getRight(){
+    public Node getRight(){
         return right;
     }
-    public void setRight(BinaryTreeNode right){
+    public void setRight(Node right){
         this.right = right;
     }
 }

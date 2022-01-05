@@ -5,13 +5,13 @@ import java.util.Stack;
 
 public class TreeTraversal {
     public static void main(String[] args) {
-        BinaryTreeNode a = new BinaryTreeNode(1);
-        BinaryTreeNode b = new BinaryTreeNode(2);
-        BinaryTreeNode c = new BinaryTreeNode(3);
-        BinaryTreeNode d = new BinaryTreeNode(4);
-        BinaryTreeNode e = new BinaryTreeNode(5);
-        BinaryTreeNode f = new BinaryTreeNode(6);
-        BinaryTreeNode g = new BinaryTreeNode(7);
+        Node a = new Node(1);
+        Node b = new Node(2);
+        Node c = new Node(3);
+        Node d = new Node(4);
+        Node e = new Node(5);
+        Node f = new Node(6);
+        Node g = new Node(7);
         a.setLeft(b);
         a.setRight(c);
         b.setLeft(d);
@@ -27,7 +27,7 @@ public class TreeTraversal {
 
     }
     // Pre order
-    public static void PreOrder(BinaryTreeNode root){
+    public static void PreOrder(Node root){
         if(root != null){
             System.out.println(root.data);
             PreOrder(root.left);
@@ -35,14 +35,14 @@ public class TreeTraversal {
         }
     }
 
-    public static ArrayList<Integer> preorderTraversal(BinaryTreeNode root){
+    public static ArrayList<Integer> preorderTraversal(Node root){
         ArrayList<Integer> res = new ArrayList<>();
         if(root == null)
             return res;
-        Stack<BinaryTreeNode> s = new Stack<>();
+        Stack<Node> s = new Stack<>();
         s.push(root);
         while (!s.isEmpty()){
-            BinaryTreeNode tmp = s.pop();
+            Node tmp = s.pop();
             res.add(tmp.data);
 
             if(tmp.right != null)
@@ -54,7 +54,7 @@ public class TreeTraversal {
     }
 
     // In order traversal
-    public static void InOrder(BinaryTreeNode root){
+    public static void InOrder(Node root){
         if (root != null){
             InOrder(root.left);
             System.out.println(root.data);
@@ -62,10 +62,10 @@ public class TreeTraversal {
         }
     }
 
-    public static ArrayList<Integer> inorderTraversal(BinaryTreeNode root){
+    public static ArrayList<Integer> inorderTraversal(Node root){
         ArrayList<Integer> res = new ArrayList<>();
-        Stack<BinaryTreeNode> s = new Stack<>();
-        BinaryTreeNode curNode = root;
+        Stack<Node> s = new Stack<>();
+        Node curNode = root;
         boolean done = false;
         while (!done){
             if (curNode != null){
@@ -86,7 +86,7 @@ public class TreeTraversal {
         return res;
     }
 
-    public static void PostOrder(BinaryTreeNode root){
+    public static void PostOrder(Node root){
         if (root != null){
             PostOrder(root.left);
             PostOrder(root.right);
@@ -94,15 +94,15 @@ public class TreeTraversal {
         }
     }
 
-    public static ArrayList<Integer> postorderTraversal(BinaryTreeNode root){
+    public static ArrayList<Integer> postorderTraversal(Node root){
         ArrayList<Integer> res = new ArrayList<>();
         if(root == null)
             return res;
-        Stack<BinaryTreeNode> s = new Stack<>();
+        Stack<Node> s = new Stack<>();
         s.push(root);
-        BinaryTreeNode prev = null;
+        Node prev = null;
         while (!s.isEmpty()){
-            BinaryTreeNode curr = s.peek();
+            Node curr = s.peek();
             if (prev == null || prev.left == curr || prev.right == curr){
                 // traverse from top to button, and if curr has left child or right child
                 //push into the stack; otherwise , pop out.
